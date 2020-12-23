@@ -129,7 +129,7 @@ class Killfeed(commands.Cog):
                         await asyncio.sleep(2) # Avoid rate limits
                     elif "Animal_CanisLupus_Grey" in line or "Animal_CanisLupus_White" in line:
                         embed = discord.Embed(
-                            title=f"🐺 Animal Kill | {timestamp}",
+                            title=f"🐺 Wolf Kill | {timestamp}",
                             description=f"**{player_killed}** killed by Wolf!",
                             color=0x7a00ff
                         )
