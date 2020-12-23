@@ -72,6 +72,8 @@ class Killfeed(commands.Cog):
         if nitrado_id not in self.reported:
             self.reported[nitrado_id] = []
             
+        if nitrado_id not in self.last_log:
+            self.last_log[nitrado_id] = ""
 
         async with aiofiles.open(fp, mode="r") as f:
             async for line in f:
@@ -79,7 +81,7 @@ class Killfeed(commands.Cog):
                     continue
                 
                 if "AdminLog" in line:
-                    if self.last_log[nitrado_id] != str(line)
+                    if self.last_log[nitrado_id] != str(line):
                         self.last_log[nitrado_id] = str(line)
                         self.reported[nitrado_id] = []
 
@@ -121,8 +123,8 @@ class Killfeed(commands.Cog):
                             description=f"**{player_killer}** killed **{player_killed}**\n**Weapon**: `{weapon}` ({distance}m)\n**Location**: {coords}",
                             color=0x7a00ff
                         ).set_thumbnail(url=Config.EMBED_IMAGE)
-                        rand_num = random.randint(1, 50)
-                        if rand_num <= 3:
+                        rand_num = random.randint(1, 70)
+                        if rand_num <= 2:
                             embed.description += "\n\nMade with :heart: by [Killfeed.me](https://killfeed.me)"
                         await channel.send(embed=embed)
                         await asyncio.sleep(2) # Avoid rate limits
