@@ -1,6 +1,6 @@
 class Config:
     # Find your token here: https://server.nitrado.net/usa/developer/tokens
-    NITRADO_TOKEN = 
+    NITRADO_TOKEN = ""
     # Discord bot token: https://discord.com/developers/applications
     DISCORD_TOKEN = ""
     # Bot prefix (not used at the current version)
