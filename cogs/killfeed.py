@@ -114,8 +114,8 @@ class Killfeed(commands.Cog):
                             description=f"**{player_killer}** killed **{player_killed}**\n**Weapon**: `{weapon}` ({distance}m)\n**Location**: {coords}",
                             color=0x7a00ff
                         ).set_thumbnail(url=Config.EMBED_IMAGE)
-                        rand_num = random.randint(1, 20)
-                        if rand_num <= 2:
+                        rand_num = random.randint(1, 50)
+                        if rand_num <= 3:
                             embed.description += "\n\nMade with :heart: by [Killfeed.me](https://killfeed.me)"
                         await channel.send(embed=embed)
                         await asyncio.sleep(2) # Avoid rate limits
