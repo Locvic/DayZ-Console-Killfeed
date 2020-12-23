@@ -38,6 +38,7 @@ class Killfeed(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.reported = {}
+        self.last_log = {}
         self.headers = {'Authorization': f'Bearer {Config.NITRADO_TOKEN}'}
         logging.basicConfig(level=logging.INFO)
     
@@ -70,11 +71,17 @@ class Killfeed(commands.Cog):
         
         if nitrado_id not in self.reported:
             self.reported[nitrado_id] = []
+            
 
         async with aiofiles.open(fp, mode="r") as f:
             async for line in f:
                 if str(line) in self.reported[nitrado_id]:
                     continue
+                
+                if "AdminLog" in line:
+                    if self.last_log[nitrado_id] != str(line)
+                        self.last_log[nitrado_id] = str(line)
+                        self.reported[nitrado_id] = []
 
                 self.reported[nitrado_id].append(str(line))
 
