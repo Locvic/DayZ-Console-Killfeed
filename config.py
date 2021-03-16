@@ -6,7 +6,7 @@ class Config:
     # Bot prefix (not used at the current version)
     BOT_PREFIX = "."
     # Killfeed Embed Image
-    EMBED_IMAGE = "https://i.imgur.com/T9uwnWk.png"
+    EMBED_IMAGE = "https://i.imgur.com/oMrDc2M.gif"
 
     # Recommended to have less than 5 (Enable "Developer Mode" to get your channel's ID)
     SERVERS = {
