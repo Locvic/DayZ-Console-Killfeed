@@ -1,11 +1,11 @@
 # DayZ-Console-Killfeed
-Basic DayZ Killfeed for PS4/Xbox Nitrado Servers
+Basic DayZ Killfeed for PS4/PS5/Xbox Nitrado Servers
 
 ![](https://i.ibb.co/s3pCwPK/image.png)
 
 # Requirements
 - Server for hosting
-- Python 3.8
+- Python 3.8+
 - A brain
 
 # Installation
