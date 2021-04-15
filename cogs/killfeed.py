@@ -48,13 +48,16 @@ class Killfeed(commands.Cog):
         self.fetch_logs.start()
 
     async def run_loop(self):
+        coros = []
         servers = list(Config.SERVERS.keys())
 
         for nitrado_id in servers:
             log = await self.download_logfile(nitrado_id)
 
             if log:
-                asyncio.ensure_future(self.check_log(nitrado_id))
+                coros.append(self.check_log(nitrado_id))
+        
+        await asyncio.gather(*coros)
     
     @tasks.loop(minutes=5)
     async def fetch_logs(self):
@@ -113,6 +116,7 @@ class Killfeed(commands.Cog):
                         coords = str(re.search(r'pos=<(.*?)>', line).group(1))
                         weapon = re.search(r' with (.*) from', line) or re.search(r'with (.*)', line)
                         weapon = str(weapon.group(1))
+                        
                         try:
                             distance = round(float(re.search(r'from ([0-9.]+) meters', line).group(1)), 2)
                         except AttributeError:
