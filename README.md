@@ -1,7 +1,7 @@
 # DayZ-Console-Killfeed
 Basic DayZ Killfeed for PS4/PS5/Xbox Nitrado Servers
 
-![](https://i.ibb.co/s3pCwPK/image.png)
+![](https://i.ibb.co/5sjNKQx/image.png)
 
 # Requirements
 - Server for hosting
