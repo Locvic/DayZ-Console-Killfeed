@@ -18,5 +18,5 @@ Edit configuration:
 Run the bot:
 `python3 main.py`
 
-**Advanced**
+# Advanced
 If you're looking for something more advanced, and have a very well understanding of Python check out this [project](https://github.com/nxck69/DayZConsoleKillfeedAdvanced) by nxck69
